@@ -66,7 +66,7 @@ int main(int argc, char **argv)
       }
 
       char checkpoint_file[SCR_MAX_FILENAME];
-      sprintf(checkpoint_file, "time_%d/rank_%d.ckpt", timestep, world_rank);
+      sprintf(checkpoint_file, "checkpoints/rank_%d.ckpt", world_rank);
       char scr_file[SCR_MAX_FILENAME];
       SCR_Route_file(checkpoint_file, scr_file);
       char checkpoint_data[SCR_MAX_FILENAME];
@@ -78,7 +78,6 @@ int main(int argc, char **argv)
         fwrite(checkpoint_data, 1, sizeof(checkpoint_data), fs);
         fclose(fs);
       }
-      timestep++;
     }
 
     SCR_Complete_checkpoint(1);
