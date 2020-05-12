@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "test_ckpt.C": "cpp",
+        "iosfwd": "cpp"
+    }
+}
